@@ -17,4 +17,9 @@ public class UserService {
          return userRepository.findAllUsers();
     }
 
+    public List<UserDAO> login(String username, String password, String role)
+    {
+        return userRepository.login(username,password,role);
+    }
+
 }
