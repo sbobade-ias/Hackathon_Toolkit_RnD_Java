@@ -2,14 +2,13 @@ package com.toolkit.app.controller;
 
 import com.toolkit.app.dao.UserDAO;
 import com.toolkit.app.service.UserService;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class UserController {
 
