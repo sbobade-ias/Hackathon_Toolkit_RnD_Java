@@ -129,6 +129,8 @@ public class UserRepository {
             user.setAdtech_exp(rs.getString("adtech_exp"));
             user.setAdtech_poc(rs.getString("adtech_poc"));
             user.setAspired_tech(rs.getString("aspired_tech"));
+            user.setRole(rs.getString("role"));
+            user.setEmail(rs.getString("email"));
             return user;
         }
     }
