@@ -37,9 +37,9 @@ public class UserController {
         return list;
     }
 
-    @RequestMapping(path = "/login/{username}/{password}/{role}", method = RequestMethod.GET)
-    public List<UserDAO> login(@PathVariable String username, @PathVariable String password, @PathVariable String role) {
-        List<UserDAO> user = userService.login(username, password, role);
+    @RequestMapping(path = "/login/{email}/{password}/{role}", method = RequestMethod.GET)
+    public List<UserDAO> login(@PathVariable String email, @PathVariable String password, @PathVariable String role) {
+        List<UserDAO> user = userService.login(email, password, role);
         return user;
     }
 
