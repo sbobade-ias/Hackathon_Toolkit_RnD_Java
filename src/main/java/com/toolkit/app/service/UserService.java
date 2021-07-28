@@ -1,6 +1,7 @@
 package com.toolkit.app.service;
 
 import com.toolkit.app.dao.UserDAO;
+import com.toolkit.app.dao.UserSkillsDAO;
 import com.toolkit.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,4 +23,12 @@ public class UserService {
         return userRepository.login(username,password,role);
     }
 
+    public UserSkillsDAO getUserSkills(String userId){
+        return userRepository.getUserSkills(Integer.valueOf(userId));
+    }
+
+    //LIMIT TO 3 SECONDARY SKILLS
+    public void setUserSkills(UserSkillsDAO userSkillsDAO){
+        userRepository.setUserSkills(userSkillsDAO);
+    }
 }
