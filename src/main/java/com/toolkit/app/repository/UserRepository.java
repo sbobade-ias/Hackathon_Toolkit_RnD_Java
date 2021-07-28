@@ -21,7 +21,7 @@ public class UserRepository {
     final String SELECT_ALL_QUERY = "SELECT * from Users";
     final String SELECT_LOGIN_QUERY = "SELECT * from users,User_profile " +
             "where users.id=user_profile.id "+
-            "and username = ? and password = ? and role = ?";
+            "and email = ? and password = ? and role = ?";
     final String SELECT_USER_DETAILS = "select * from users,User_profile " +
             "where users.id=user_profile.id " +
             "and users.id = ?";
@@ -43,9 +43,9 @@ public class UserRepository {
         return jdbcTemplate.query(SELECT_ALL_QUERY, new UserMapper());
     }
 
-    public List<UserDAO> login(String username, String password, String role) {
+    public List<UserDAO> login(String email, String password, String role) {
         List<UserDAO> user = jdbcTemplate.query(SELECT_LOGIN_QUERY,
-                new Object[]{username, password, role}, new UserMapper());
+                new Object[]{email, password, role}, new UserMapper());
         return user;
     }
 
